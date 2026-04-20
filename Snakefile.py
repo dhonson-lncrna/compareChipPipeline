@@ -268,28 +268,6 @@ rule average_lfc:
 # Run deeptools comparisons
 ##############################################################################
 
-#rule intersect_h3k4me3_gene_bodies:
-#    input:
-#        peaks=os.path.join(DIR_DICT['deseq2'],
-#                           f"H3K4me3_{REPJOIN}_{{cond_comb}}.allPeaks"),
-#        gene_bodies=GENE_BODIES_BED
-#    output:
-#        os.path.join(DIR_DICT['intersect'],
-#                     f"H3K4me3_{REPJOIN}_{{cond_comb}}.allPeaks.geneBodies.bed")
-#    wildcard_constraints:
-#        cond_comb="|".join(COND_COMB)
-#    log:
-#        "logs/intersect_h3k4me3_gene_bodies_{cond_comb}.log"
-#    shell:
-#        '''
-#        bedtools intersect \
-#            -a {input.peaks} \
-#            -b {input.gene_bodies} \
-#            -wa \
-#            > {output} \
-#            2> {log}
-#        '''
-
 rule chromatin_state_actProm:
     input:
         h3k4me3=os.path.join(DIR_DICT['mergePeaks'],
