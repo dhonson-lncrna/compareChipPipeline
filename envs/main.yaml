@@ -1,0 +1,16 @@
+name: chipCompare
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pandas
+  - numpy
+  - snakemake
+  - snakemake-executor-plugin-slurm
+  - pybedtools
+  - bedtools
+  - subread          # featureCounts
+  - pydeseq2
+  - deeptools        # computeMatrix, plotHeatmap, bigwigAverage

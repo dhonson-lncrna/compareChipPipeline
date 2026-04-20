@@ -1,0 +1,24 @@
+# Input data information
+bam_dir: "../mergeData/bwamem2"
+macs3_dir: "../mergeData/macs3"
+lfc_bw_dir: "../mergeData/bigwigs"  # path to directory containing per-sample log2fc bigwigs
+bam_suffix: "_filt.sort.bam"
+
+# Top level output folder
+dir_out: "../results"
+
+# consensusPeaks parameters
+min_overlap: 0.2 # fraction peak overlap
+
+# DESeq2 parameters
+alpha: 0.1       # false discovery rate
+lfc_threshold: 1 # log2 fold change
+
+# Annotation files
+gene_bodies_bed: "/resnick/groups/carnegie_poc/mcfallngai-lab/dhonson/genomes/escolopes_v3/ncbi_original/escolopes_v3_genomic.bed"  # path to gene bodies BED file
+
+# deeptools computeMatrix parameters
+a: 3000   # downstream flanking region (bp)
+b: 3000   # upstream flanking region (bp)
+m: 5000   # region body length for scale-regions mode (bp)
+bs: 50    # bin size (bp)
